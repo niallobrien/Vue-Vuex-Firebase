@@ -12,15 +12,13 @@
 </template>
 
 <script>
-  import Vuex from 'vuex'
   import Firebase from 'firebase'
-  import { getMessages } from '../vuex/getters'
 
   const firebaseApp = Firebase.initializeApp({ databaseURL: '<YOUR-FIREBASE-URL>' })
   const db = firebaseApp.database()
   const messagesRef = db.ref('messages')
+
   export default {
-    computed: Vuex.mapGetters([getMessages]),
     data () {
       return {
         newMessage: ''
