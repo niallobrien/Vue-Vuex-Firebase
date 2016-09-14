@@ -10,6 +10,9 @@ Vue.config.debug = true
 
 export default new Vuex.Store({
   mutations: VuexFire.mutations,
+  getters: {
+    messages: state => { state.messages }
+  },
   modules: {
     messages
   }
